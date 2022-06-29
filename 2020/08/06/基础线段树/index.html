@@ -1,0 +1,350 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>基础线段树 | xcxc82</title><meta name="keywords" content="学习笔记"><meta name="author" content="xcxc82"><meta name="copyright" content="xcxc82"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="线段树学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基础线段树">
+<meta property="og:url" content="http://example.com/2020/08/06/%E5%9F%BA%E7%A1%80%E7%BA%BF%E6%AE%B5%E6%A0%91/index.html">
+<meta property="og:site_name" content="xcxc82">
+<meta property="og:description" content="线段树学习笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<meta property="article:published_time" content="2020-08-06T05:53:00.000Z">
+<meta property="article:modified_time" content="2022-06-29T09:35:19.870Z">
+<meta property="article:author" content="xcxc82">
+<meta property="article:tag" content="学习笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2020/08/06/%E5%9F%BA%E7%A1%80%E7%BA%BF%E6%AE%B5%E6%A0%91/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '基础线段树',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-06-29 17:35:19'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"  media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/null" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">xcxc82</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">基础线段树</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-08-06T05:53:00.000Z" title="发表于 2020-08-06 13:53:00">2020-08-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-06-29T09:35:19.870Z" title="更新于 2022-06-29 17:35:19">2022-06-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/OI/">OI</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span id="" data-flag-title="基础线段树"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span class="waline-pageview-count" data-path="/2020/08/06/%E5%9F%BA%E7%A1%80%E7%BA%BF%E6%AE%B5%E6%A0%91/"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h1><h2 id="P3373-【模板】线段树-2"><a href="#P3373-【模板】线段树-2" class="headerlink" title="P3373 【模板】线段树 2"></a><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3373">P3373 【模板】线段树 2</a></h2><p>设$mtag$为乘法标记,$atag$为加法标记</p>
+<p>对于下放后的每一个区间来说,$x&#x3D;x<em>mtag+atag</em>len$(式$1$)</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/tbtb4rli.png"></p>
+<p>$x&#x3D;x\cdot mtag_2+len\cdot atag_2&#x3D;(x\cdot mtag_2+len\cdot atag_2)\cdot mtag_1+atag_1\cdot len$</p>
+<p>$&#x3D;x\cdot mtag_2\cdot mtag_1+len*atag_2\cdot mtag_1+atag_1\cdot len$</p>
+<p>$&#x3D;x\cdot (mtag_2\cdot mtag_1)+len\cdot (atag_2\cdot mtag_1+atag_1)$</p>
+<p>再根据前面的式$1$,易得</p>
+<p>$mtag_2 &#x3D; mtag_1\cdot mtag_2$</p>
+<p>$atag_2&#x3D;atag_2\cdot mtag_1+atag_2$</p>
+<p>核心(下放)代码:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">pushdown</span><span class="params">(tree2 *tree,<span class="type">int</span> l,<span class="type">int</span> r)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(tree-&gt;lazym==<span class="number">1</span>&amp;&amp;tree-&gt;lazyp==<span class="number">0</span>||tree-&gt;lson==<span class="literal">NULL</span>) <span class="keyword">return</span>;</span><br><span class="line">	<span class="type">int</span> mid = (l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">	tree-&gt;lson-&gt;x = (tree-&gt;lson-&gt;x*tree-&gt;lazym+(<span class="type">long</span> <span class="type">long</span>)tree-&gt;lazyp*(mid-l+<span class="number">1</span>))%mo;</span><br><span class="line">	tree-&gt;rson-&gt;x = (tree-&gt;rson-&gt;x*tree-&gt;lazym+(<span class="type">long</span> <span class="type">long</span>)tree-&gt;lazyp*(r-mid))%mo;</span><br><span class="line">	tree-&gt;lson-&gt;lazym = (tree-&gt;lazym*tree-&gt;lson-&gt;lazym)%mo;</span><br><span class="line">	tree-&gt;rson-&gt;lazym = (tree-&gt;lazym*tree-&gt;rson-&gt;lazym)%mo;</span><br><span class="line">	tree-&gt;lson-&gt;lazyp = (tree-&gt;lazym*tree-&gt;lson-&gt;lazyp+tree-&gt;lazyp)%mo;</span><br><span class="line">	tree-&gt;rson-&gt;lazyp = (tree-&gt;lazym*tree-&gt;rson-&gt;lazyp+tree-&gt;lazyp)%mo;</span><br><span class="line">	tree-&gt;lazym  = <span class="number">1</span>;</span><br><span class="line">	tree-&gt;lazyp = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="基础练习题"><a href="#基础练习题" class="headerlink" title="基础练习题"></a>基础练习题</h1><p><strong><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4145">P4145 上帝造题的七分钟2 &#x2F; 花神游历各国</a></strong></p>
+<p><strong><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P6327">P6327 区间加区间sin和</a></strong></p>
+<p><strong><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1438">P1438 无聊的数列</a></strong></p>
+<p><strong><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4513">P4513 小白逛公园</a></strong></p>
+<p><strong><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4588">P4588 [TJOI2018]数学计算</a></strong></p>
+<p><strong><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2894">P2894 [USACO08FEB]Hotel G</a></strong></p>
+<h2 id="P4145-上帝造题的七分钟2-x2F-花神游历各国"><a href="#P4145-上帝造题的七分钟2-x2F-花神游历各国" class="headerlink" title="P4145 上帝造题的七分钟2 &#x2F; 花神游历各国"></a>P4145 上帝造题的七分钟2 &#x2F; 花神游历各国</h2><p>照题里的这个数据范围来看,直接暴力开方肯定会T飞</p>
+<p>通过观察,不难发现数据范围内最大的数也只需要$6$次开方就可以变为$1$</p>
+<p>考虑剪枝优化：</p>
+<p>当一个区间的最大值为$1$时,其整个区间的其他值肯定也为$1$</p>
+<p>因此当区间内最大值等于$1$时,直接$return$掉</p>
+<p>核心代码:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">change</span><span class="params">(<span class="type">int</span> node,<span class="type">int</span> l,<span class="type">int</span> r)</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> L = tree[node].l,R = tree[node].r;</span><br><span class="line">	<span class="keyword">if</span>(L==R)&#123;</span><br><span class="line">		tree[node].sum = <span class="built_in">sqrt</span>(tree[node].sum);</span><br><span class="line">		tree[node].maxn = <span class="built_in">sqrt</span>(tree[node].maxn);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> mid = (L+R)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(l&lt;=mid&amp;&amp;tree[lson].maxn&gt;<span class="number">1</span>)&#123;<span class="comment">//最大值大于1时在进行修改操作</span></span><br><span class="line">			<span class="built_in">change</span>(lson,l,r);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(r&gt;mid&amp;&amp;tree[rson].maxn&gt;<span class="number">1</span>)&#123;</span><br><span class="line">			<span class="built_in">change</span>(rson,l,r);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">pushup</span>(node);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="P6327-区间加区间sin和"><a href="#P6327-区间加区间sin和" class="headerlink" title="P6327 区间加区间sin和"></a>P6327 区间加区间sin和</h2><p>挺好的一道题目,很适合线段树初学者练手</p>
+<p>学过和差角公式的应该都能很快想出解法</p>
+<p>$sin(a+x) &#x3D; sinacosx+cosasinx$</p>
+<p>$cos(a+x) &#x3D; cosacosx-sinxsina$</p>
+<p>只需要在线段树里维护一个$sinx$和一个$cosx$即可</p>
+<p>核心代码:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">update2</span><span class="params">(<span class="type">int</span> node,<span class="type">double</span> sinv,<span class="type">double</span> cosv)</span></span>&#123;<span class="comment">//和差角公式</span></span><br><span class="line">	<span class="type">double</span> cosa = tree[node].cosx;</span><br><span class="line">        <span class="type">double</span> sina = tree[node].sinx;</span><br><span class="line">	tree[node].cosx = cosa*cosv-sina*sinv;</span><br><span class="line">	tree[node].sinx = sina*cosv+cosa*sinv;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pushdown</span><span class="params">(<span class="type">int</span> node)</span></span>&#123;<span class="comment">//下放</span></span><br><span class="line">	<span class="keyword">if</span>(tree[node].tag)&#123;</span><br><span class="line">		<span class="type">double</span> cosa = <span class="built_in">cos</span>(tree[node].tag),sina = <span class="built_in">sin</span>(tree[node].tag);</span><br><span class="line">		<span class="built_in">update2</span>(lson,sina,cosa);<span class="comment">//更新儿子的值</span></span><br><span class="line">		<span class="built_in">update2</span>(rson,sina,cosa);</span><br><span class="line">		tree[lson].tag+=tree[node].tag;<span class="comment">//更新儿子的tag</span></span><br><span class="line">		tree[rson].tag+=tree[node].tag;</span><br><span class="line">		tree[node].tag = <span class="number">0</span>;b</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">change</span><span class="params">(<span class="type">int</span> node,<span class="type">int</span> l,<span class="type">int</span> r,<span class="type">int</span> x)</span></span>&#123;<span class="comment">//更新操作</span></span><br><span class="line">	<span class="type">int</span> L = tree[node].l,R = tree[node].r;</span><br><span class="line">	<span class="keyword">if</span>(R&lt;=r&amp;&amp;L&gt;=l)&#123;<span class="comment">//包围在区间内,直接修改</span></span><br><span class="line">		tree[node].tag+=x;</span><br><span class="line">		<span class="built_in">update2</span>(node,<span class="built_in">sin</span>(x),<span class="built_in">cos</span>(x));</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">pushdown</span>(node);<span class="comment">//下放</span></span><br><span class="line">	<span class="type">int</span> mid = (L + R)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(l&lt;=mid) <span class="built_in">change</span>(lson,l,r,x);</span><br><span class="line">	<span class="keyword">if</span>(r&gt;mid) <span class="built_in">change</span>(rson,l,r,x);</span><br><span class="line">	<span class="built_in">update</span>(node);<span class="comment">//上传更新</span></span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="P1438-无聊的数列"><a href="#P1438-无聊的数列" class="headerlink" title="P1438 无聊的数列"></a>P1438 无聊的数列</h2><p>利用线段树来维护差分数组。</p>
+<p>每当进行一个操作$1$时</p>
+<p>将点$l$加上首相$k$</p>
+<p>如果区间不是一个点的话,则将区间$[l+1,r]$上的点都加上公差$d$</p>
+<p>如果$r&lt;n$,则在$r+1$的位置上加上$-(k+(r-l)\cdot d))$,便于差分</p>
+<p>查询时,将区间$[1,k]$的值都加上即可,相当于查询操作</p>
+<p>区间查询,区间修改,直接上线段树模板即可</p>
+<p>核心代码:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">		<span class="type">int</span> mode,l,r,k,d;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;mode);</span><br><span class="line">		<span class="keyword">if</span>(mode==<span class="number">1</span>)&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d%d&quot;</span>,&amp;l,&amp;r,&amp;k,&amp;d);</span><br><span class="line">			<span class="built_in">change</span>(<span class="number">1</span>,<span class="number">1</span>,n,l,l,k);<span class="comment">//修改左端点</span></span><br><span class="line">			<span class="keyword">if</span>(l!=r) <span class="built_in">change</span>(<span class="number">1</span>,<span class="number">1</span>,n,l+<span class="number">1</span>,r,d);<span class="comment">//修改区间</span></span><br><span class="line">			<span class="keyword">if</span>(r+<span class="number">1</span>&lt;=n) <span class="built_in">change</span>(<span class="number">1</span>,<span class="number">1</span>,n,r+<span class="number">1</span>,r+<span class="number">1</span>,-(k+(r-l)*d));<span class="comment">//修改右端点</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;d);</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="built_in">query</span>(<span class="number">1</span>,<span class="number">1</span>,n,<span class="number">1</span>,d)+a[d]);<span class="comment">//差分数组的值+原值</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="P4513-小白逛公园"><a href="#P4513-小白逛公园" class="headerlink" title="P4513 小白逛公园"></a>P4513 小白逛公园</h2><p>线段树经典题</p>
+<p>维护一个从区间左端点开始的区间最大子段$maxl$,从右端点开始的区间最大子段$maxr$,总区间最大子段$maxx$,和一个区间和$sum$</p>
+<p>对于$maxl$来说,其右端点的位置有两种可能:</p>
+<ul>
+<li><p>在左儿子中</p>
+</li>
+<li><p>在右儿子中</p>
+</li>
+</ul>
+<p>得到方程:$tree.maxl &#x3D; max(lson.maxl,lson.sum+rson.maxl)$</p>
+<p>$maxr$也同理</p>
+<p>方程:$tree.maxr &#x3D; max(rson.maxr,rson.sum+lson.maxr)$</p>
+<p>对于$maxx$来说，其区间范围有三种可能</p>
+<ul>
+<li><p>只在左儿子中</p>
+</li>
+<li><p>只在右儿子中</p>
+</li>
+<li><p>既在左儿子中也在右儿子中</p>
+</li>
+</ul>
+<p>得到方程:$tree.maxx &#x3D; max(lson.maxx,rson.maxx,lson.maxr+rson.maxl))$</p>
+<p>查询时只需输出区间$[l,r]$中的$maxx$即可</p>
+<p>核心代码:</p>
+<p>更新操作</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">update</span><span class="params">(tree2 *tree,tree2 *lson,tree2 *rson)</span></span>&#123;</span><br><span class="line">	tree-&gt;sum = lson-&gt;sum+rson-&gt;sum;</span><br><span class="line">	tree-&gt;maxl = <span class="built_in">max</span>(lson-&gt;maxl,lson-&gt;sum+rson-&gt;maxl);</span><br><span class="line">	tree-&gt;maxr = <span class="built_in">max</span>(rson-&gt;maxr,rson-&gt;sum+lson-&gt;maxr);</span><br><span class="line">	tree-&gt;maxX = <span class="built_in">max</span>(lson-&gt;maxX,<span class="built_in">max</span>(rson-&gt;maxX,lson-&gt;maxr+rson-&gt;maxl));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>查询操作</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">tree2 *<span class="title">query</span><span class="params">(tree2 *tree,<span class="type">int</span> l,<span class="type">int</span> r,<span class="type">int</span> x,<span class="type">int</span> y)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(x&lt;=l&amp;&amp;y&gt;=r)</span><br><span class="line">	<span class="keyword">return</span> tree;</span><br><span class="line">	<span class="type">int</span> mid = (l + r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">	tree2 *t1 = <span class="literal">NULL</span>,*t2 = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">if</span>(x&lt;=mid) t1 = <span class="built_in">query</span>(tree-&gt;lson,l,mid,x,y);</span><br><span class="line">	<span class="keyword">if</span>(y&gt;mid) t2 = <span class="built_in">query</span>(tree-&gt;rson,mid+<span class="number">1</span>,r,x,y);</span><br><span class="line">	<span class="keyword">if</span>(t1==<span class="literal">NULL</span>) <span class="keyword">return</span> t2;</span><br><span class="line">	<span class="keyword">if</span>(t2==<span class="literal">NULL</span>) <span class="keyword">return</span> t1;</span><br><span class="line">	tree2 *ret = &amp;dizhi[++t];</span><br><span class="line">	<span class="built_in">update</span>(ret,t1,t2);</span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="P4588-TJOI2018-数学计算"><a href="#P4588-TJOI2018-数学计算" class="headerlink" title="P4588 [TJOI2018]数学计算"></a>P4588 [TJOI2018]数学计算</h2><p>比较简单的一道题目。</p>
+<p>仔细观察不难发现</p>
+<p>所谓的操作$1$跟操作$2$其实就是在进行普通的单点修改操作而已</p>
+<p>用一个线段树在记录一段区间内的总乘积</p>
+<p>操作$1$是把点$i$的值从$1$修改为$i$</p>
+<p>操作$2$则是把点$pos$的值修改为$1$</p>
+<p>核心代码:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">	<span class="function"><span class="type">void</span> <span class="title">pushup</span><span class="params">(<span class="type">int</span> node)</span></span>&#123;</span><br><span class="line">	tree[node].val = (tree[lson].val*tree[rson].val)%mo;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">build</span><span class="params">(<span class="type">int</span> node,<span class="type">int</span> l,<span class="type">int</span> r)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(l==r)&#123;</span><br><span class="line">		tree[node].val = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	       &#125;</span><br><span class="line">	<span class="type">long</span> <span class="type">long</span> mid = (l + r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">	<span class="built_in">build</span>(lson,l,mid);</span><br><span class="line">	<span class="built_in">build</span>(rson,mid+<span class="number">1</span>,r);</span><br><span class="line">	<span class="built_in">pushup</span>(node);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">change</span><span class="params">(<span class="type">int</span> node,<span class="type">int</span> l,<span class="type">int</span> r,<span class="type">int</span> x,<span class="type">int</span> y)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(l==r)&#123;</span><br><span class="line">		tree[node].val = y;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">		<span class="type">int</span> mid = (l + r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span>(x&lt;=mid) <span class="built_in">change</span>(lson,l,mid,x,y);</span><br><span class="line">		<span class="keyword">else</span> <span class="built_in">change</span>(rson,mid+<span class="number">1</span>,r,x,y);</span><br><span class="line">		<span class="built_in">pushup</span>(node);</span><br><span class="line">         &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="P2894-USACO08FEB-Hotel-G"><a href="#P2894-USACO08FEB-Hotel-G" class="headerlink" title="P2894 [USACO08FEB]Hotel G"></a>P2894 [USACO08FEB]Hotel G</h2><p>跟<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4513"><strong>P4513 小白逛公园</strong></a>大同小异的思路</p>
+<p>只是把单点修改操作换成了区间修改罢了</p>
+<p>要注意的是这里不存在负值的情况</p>
+<p>因此在上传操作时转移没那么复杂,只用判断$maxl$是否等于$sum$</p>
+<p>若等于,说明左儿子中房间全为空,直接全部加上,再加上右儿子的$maxl$</p>
+<p>若不等于,则为左儿子的$maxl$</p>
+<p>$maxr$也同理</p>
+<p>同时也要注意这里的查询查的是满足长度为$x$的最左的端点</p>
+<p>因此在查询时要满足”能左则左”</p>
+<p>核心代码:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">pushup</span><span class="params">(<span class="type">int</span> node)</span></span>&#123;<span class="comment">//上传</span></span><br><span class="line">	<span class="keyword">if</span>(tree[lson].maxx==tree[lson].sum)&#123;<span class="comment">//如果左区间全为空房</span></span><br><span class="line">		tree[node].lmax = tree[lson].sum+tree[rson].lmax;<span class="comment">//全部加上</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		tree[node].lmax = tree[lson].lmax;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(tree[rson].maxx==tree[rson].sum)&#123;</span><br><span class="line">		tree[node].rmax = tree[rson].sum+tree[lson].rmax;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		tree[node].rmax = tree[rson].rmax;</span><br><span class="line">	&#125;</span><br><span class="line">	tree[node].maxx = <span class="built_in">max</span>(tree[lson].rmax+tree[rson].lmax,<span class="built_in">max</span>(tree[lson].maxx,tree[rson].maxx));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">build</span><span class="params">(<span class="type">int</span> node,<span class="type">int</span> l,<span class="type">int</span> r)</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	tree[node].sum = tree[node].lmax = tree[node].rmax = tree[node].maxx =r-l+<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(l==r)&#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">build</span>(lson,l,mid);</span><br><span class="line">	<span class="built_in">build</span>(rson,mid+<span class="number">1</span>,r);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pushdown</span><span class="params">(<span class="type">int</span> node)</span></span>&#123;<span class="comment">//下放</span></span><br><span class="line">	<span class="keyword">if</span>(tree[node].lazy==<span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">if</span>(tree[node].lazy==<span class="number">1</span>)&#123;<span class="comment">//退房</span></span><br><span class="line">		tree[lson].maxx = tree[lson].rmax = tree[lson].lmax = <span class="number">0</span>;</span><br><span class="line">		tree[rson].maxx = tree[rson].rmax = tree[rson].lmax = <span class="number">0</span>;</span><br><span class="line">		tree[lson].lazy = tree[rson].lazy = <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(tree[node].lazy==<span class="number">2</span>)&#123;<span class="comment">//开房</span></span><br><span class="line">		tree[lson].maxx = tree[lson].rmax = tree[lson].lmax = tree[lson].sum;</span><br><span class="line">		tree[rson].maxx = tree[rson].rmax = tree[rson].lmax = tree[rson].sum;</span><br><span class="line">		tree[lson].lazy = tree[rson].lazy = <span class="number">2</span>;	</span><br><span class="line">	&#125;</span><br><span class="line">	tree[node].lazy = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">change</span><span class="params">(<span class="type">int</span> node,<span class="type">int</span> l,<span class="type">int</span> r,<span class="type">int</span> x,<span class="type">int</span> y,<span class="type">int</span> opt)</span></span>&#123;<span class="comment">//opt为1代表退房,为2代表开房</span></span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(x&lt;=l&amp;&amp;y&gt;=r)&#123;</span><br><span class="line">		<span class="keyword">if</span>(opt==<span class="number">1</span>) tree[node].maxx = tree[node].lmax = tree[node].rmax = <span class="number">0</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">else</span> tree[node].maxx = tree[node].lmax = tree[node].rmax = tree[node].sum;</span><br><span class="line">		</span><br><span class="line">		tree[node].lazy = opt;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">pushdown</span>(node);</span><br><span class="line">	<span class="keyword">if</span>(x&lt;=mid) <span class="built_in">change</span>(lson,l,mid,x,y,opt);</span><br><span class="line">	<span class="keyword">if</span>(y&gt;mid) <span class="built_in">change</span>(rson,mid+<span class="number">1</span>,r,x,y,opt);</span><br><span class="line">	<span class="built_in">pushup</span>(node);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">query</span><span class="params">(<span class="type">int</span> node,<span class="type">int</span> l,<span class="type">int</span> r,<span class="type">int</span> x)</span></span>&#123;<span class="comment">//查询</span></span><br><span class="line">	<span class="built_in">pushdown</span>(node);</span><br><span class="line">	<span class="keyword">if</span>(l==r) <span class="keyword">return</span> l;</span><br><span class="line">	<span class="keyword">if</span>(tree[lson].maxx&gt;=x)&#123;<span class="comment">//如果左区间的最大值大于x,直接查左边</span></span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">query</span>(lson,l,mid,x);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(tree[lson].rmax+tree[rson].lmax&gt;=x)&#123;<span class="comment">//如果中间大于x</span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>+mid-tree[lson].rmax;左儿子的右最大值,也就是最靠近左边的端点</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> <span class="built_in">query</span>(rson,mid+<span class="number">1</span>,r,x);<span class="comment">//否则查右边</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="动态开点"><a href="#动态开点" class="headerlink" title="动态开点"></a>动态开点</h2><p><strong><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5459">P5459 [BJOI2016]回转寿司</a></strong></p>
+<p><strong><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF915E">CF915E Physical Education Lessons</a></strong></p>
+<p>$now ~ loading…$</p>
+<h2 id="扫描线"><a href="#扫描线" class="headerlink" title="扫描线"></a>扫描线</h2><p><strong><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5490">P5490 【模板】扫描线</a></strong></p>
+<p><strong><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1502">P1502 窗口的星星</a></strong></p>
+<p>$now ~ loading…$</p>
+<p>&#96;&#96;</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://xcxc82.github.io/">xcxc82</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://xcxc82.github.io/2022/06/14/基础线段树/">https://xcxc82.github.io/2022/06/14/基础线段树/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">xcxc82</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/08/07/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">树链剖分学习笔记</div></div></a></div><div class="next-post pull-right"><a href="/2020/08/05/p5459/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">P5459 [BJOI2016]回转寿司</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2020/08/12/tarjan%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="tarjan算法学习笔记"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-12</div><div class="title">tarjan算法学习笔记</div></div></a></div><div><a href="/2020/08/02/%E6%A0%91%E5%BD%A2dp/" title="基础树形dp"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-02</div><div class="title">基础树形dp</div></div></a></div><div><a href="/2020/08/16/%E6%A0%91%E4%B8%8A%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6/" title="树上启发式合并"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-16</div><div class="title">树上启发式合并</div></div></a></div><div><a href="/2020/08/07/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="树链剖分学习笔记"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-07</div><div class="title">树链剖分学习笔记</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/null" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">xcxc82</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:1634925559@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/156510450" target="_blank" title="bilibili"><i class="fab fa-bilibili"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1634925559&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF"><span class="toc-number">1.</span> <span class="toc-text">模板</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#P3373-%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E7%BA%BF%E6%AE%B5%E6%A0%91-2"><span class="toc-number">1.1.</span> <span class="toc-text">P3373 【模板】线段树 2</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">基础练习题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#P4145-%E4%B8%8A%E5%B8%9D%E9%80%A0%E9%A2%98%E7%9A%84%E4%B8%83%E5%88%86%E9%92%9F2-x2F-%E8%8A%B1%E7%A5%9E%E6%B8%B8%E5%8E%86%E5%90%84%E5%9B%BD"><span class="toc-number">2.1.</span> <span class="toc-text">P4145 上帝造题的七分钟2 &#x2F; 花神游历各国</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P6327-%E5%8C%BA%E9%97%B4%E5%8A%A0%E5%8C%BA%E9%97%B4sin%E5%92%8C"><span class="toc-number">2.2.</span> <span class="toc-text">P6327 区间加区间sin和</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P1438-%E6%97%A0%E8%81%8A%E7%9A%84%E6%95%B0%E5%88%97"><span class="toc-number">2.3.</span> <span class="toc-text">P1438 无聊的数列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P4513-%E5%B0%8F%E7%99%BD%E9%80%9B%E5%85%AC%E5%9B%AD"><span class="toc-number">2.4.</span> <span class="toc-text">P4513 小白逛公园</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P4588-TJOI2018-%E6%95%B0%E5%AD%A6%E8%AE%A1%E7%AE%97"><span class="toc-number">2.5.</span> <span class="toc-text">P4588 [TJOI2018]数学计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P2894-USACO08FEB-Hotel-G"><span class="toc-number">2.6.</span> <span class="toc-text">P2894 [USACO08FEB]Hotel G</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E5%BC%80%E7%82%B9"><span class="toc-number">2.7.</span> <span class="toc-text">动态开点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%AB%E6%8F%8F%E7%BA%BF"><span class="toc-number">2.8.</span> <span class="toc-text">扫描线</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/08/16/%E6%A0%91%E4%B8%8A%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6/" title="树上启发式合并"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="树上启发式合并"/></a><div class="content"><a class="title" href="/2020/08/16/%E6%A0%91%E4%B8%8A%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6/" title="树上启发式合并">树上启发式合并</a><time datetime="2020-08-16T09:55:00.000Z" title="发表于 2020-08-16 17:55:00">2020-08-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/08/12/tarjan%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="tarjan算法学习笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="tarjan算法学习笔记"/></a><div class="content"><a class="title" href="/2020/08/12/tarjan%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="tarjan算法学习笔记">tarjan算法学习笔记</a><time datetime="2020-08-12T08:39:00.000Z" title="发表于 2020-08-12 16:39:00">2020-08-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/08/07/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="树链剖分学习笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="树链剖分学习笔记"/></a><div class="content"><a class="title" href="/2020/08/07/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="树链剖分学习笔记">树链剖分学习笔记</a><time datetime="2020-08-07T09:56:00.000Z" title="发表于 2020-08-07 17:56:00">2020-08-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/08/06/%E5%9F%BA%E7%A1%80%E7%BA%BF%E6%AE%B5%E6%A0%91/" title="基础线段树"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基础线段树"/></a><div class="content"><a class="title" href="/2020/08/06/%E5%9F%BA%E7%A1%80%E7%BA%BF%E6%AE%B5%E6%A0%91/" title="基础线段树">基础线段树</a><time datetime="2020-08-06T05:53:00.000Z" title="发表于 2020-08-06 13:53:00">2020-08-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/08/05/p5459/" title="P5459 [BJOI2016]回转寿司"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="P5459 [BJOI2016]回转寿司"/></a><div class="content"><a class="title" href="/2020/08/05/p5459/" title="P5459 [BJOI2016]回转寿司">P5459 [BJOI2016]回转寿司</a><time datetime="2020-08-05T04:11:00.000Z" title="发表于 2020-08-05 12:11:00">2020-08-05</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 By xcxc82</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>function loadWaline () {
+  function insertCSS () {
+    const link = document.createElement("link")
+    link.rel = "stylesheet"
+    link.href = "https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.css"
+    document.head.appendChild(link)
+  }
+
+  function initWaline () {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://xcxc82-hqnudc6tn-xcxc82.vercel.app/',
+      pageview: true,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, null))
+  }
+
+  if (typeof Waline === 'function') initWaline()
+  else {
+    insertCSS()
+    getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.js').then(initWaline)
+  }
+}
+
+if ('Waline' === 'Waline' || !false) {
+  if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://npm.elemecdn.com/hexo-butterfly-clock/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_injector_config();
+  }
+  </script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax src="https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.js"></script><!-- hexo injector body_end end --></body></html>
