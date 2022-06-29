@@ -2585,7 +2585,7 @@ h1.page-title + .tag-cloud-list {
 #aside-content .card-info #card-info-btn {
   display: block;
   margin-top: 14px;
-  background-color: var(--btn-bg);
+  background-color: #ff8080;
   color: var(--btn-color);
   text-align: center;
   line-height: 2.4;
@@ -4130,7 +4130,7 @@ h1.page-title + .tag-cloud-list {
   width: 35px;
   height: 35px;
   border-radius: 5px;
-  background-color: var(--btn-bg);
+  background-color: #ff8080;
   color: var(--btn-color);
   text-align: center;
   font-size: 16px;
