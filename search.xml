@@ -114,7 +114,7 @@
       
         <tags>
             
-            <tag> 动态规划-期望dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -139,7 +139,7 @@
       
         <tags>
             
-            <tag> 动态规划-线性dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -164,7 +164,7 @@
       
         <tags>
             
-            <tag> 动态规划-线性dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -189,9 +189,7 @@
       
         <tags>
             
-            <tag> 动态规划-线性dp </tag>
-            
-            <tag> 贪心 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -216,9 +214,7 @@
       
         <tags>
             
-            <tag> 动态规划-线性dp </tag>
-            
-            <tag> 贪心 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -268,9 +264,7 @@
       
         <tags>
             
-            <tag> 线段树 </tag>
-            
-            <tag> 动态规划-线段树优化dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -295,7 +289,7 @@
       
         <tags>
             
-            <tag> 枚举 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -320,7 +314,7 @@
       
         <tags>
             
-            <tag> 线段树 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -345,7 +339,7 @@
       
         <tags>
             
-            <tag> 线段树 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -370,7 +364,7 @@
       
         <tags>
             
-            <tag> 线段树 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -395,7 +389,7 @@
       
         <tags>
             
-            <tag> 线段树 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -420,7 +414,7 @@
       
         <tags>
             
-            <tag> 动态规划-树形dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -445,7 +439,7 @@
       
         <tags>
             
-            <tag> 动态规划-线性dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -470,7 +464,7 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -495,7 +489,7 @@
       
         <tags>
             
-            <tag> tire </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -520,7 +514,7 @@
       
         <tags>
             
-            <tag> tire树 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -544,8 +538,6 @@
       
       
         <tags>
-            
-            <tag> manacher </tag>
             
             <tag> 学习笔记 </tag>
             
@@ -572,7 +564,7 @@
       
         <tags>
             
-            <tag> 中位数 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -597,9 +589,7 @@
       
         <tags>
             
-            <tag> 动态规划-背包dp </tag>
-            
-            <tag> 容斥 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -624,7 +614,7 @@
       
         <tags>
             
-            <tag> 贪心 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -649,7 +639,7 @@
       
         <tags>
             
-            <tag> 动态规划-区间dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -674,7 +664,7 @@
       
         <tags>
             
-            <tag> 动态规划-状压dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -699,7 +689,7 @@
       
         <tags>
             
-            <tag> 动态规划-树形dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -724,9 +714,7 @@
       
         <tags>
             
-            <tag> 图论-最小生成树 </tag>
-            
-            <tag> 树链剖分 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -751,7 +739,7 @@
       
         <tags>
             
-            <tag> 图论-最短路 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -778,8 +766,6 @@
             
             <tag> 学习笔记 </tag>
             
-            <tag> 数论 </tag>
-            
         </tags>
       
     </entry>
@@ -803,7 +789,7 @@
       
         <tags>
             
-            <tag> 动态规划-倍增优化dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -828,9 +814,7 @@
       
         <tags>
             
-            <tag> 动态规划-背包dp </tag>
-            
-            <tag> 容斥 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -855,7 +839,7 @@
       
         <tags>
             
-            <tag> 动态规划-背包dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -882,8 +866,6 @@
             
             <tag> 学习笔记 </tag>
             
-            <tag> splay </tag>
-            
         </tags>
       
     </entry>
@@ -907,7 +889,7 @@
       
         <tags>
             
-            <tag> 分块 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -957,7 +939,7 @@
       
         <tags>
             
-            <tag> 分块 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -982,7 +964,7 @@
       
         <tags>
             
-            <tag> 动态规划-期望dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1007,7 +989,7 @@
       
         <tags>
             
-            <tag> 动态规划-期望dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1032,7 +1014,7 @@
       
         <tags>
             
-            <tag> 动态规划-背包dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1057,7 +1039,7 @@
       
         <tags>
             
-            <tag> 动态规划-树形dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1082,9 +1064,7 @@
       
         <tags>
             
-            <tag> 图论-最小生成树 </tag>
-            
-            <tag> 树链剖分 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1109,9 +1089,7 @@
       
         <tags>
             
-            <tag> 线段树 </tag>
-            
-            <tag> 差分 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1136,7 +1114,7 @@
       
         <tags>
             
-            <tag> 动态规划-区间dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1186,7 +1164,7 @@
       
         <tags>
             
-            <tag> 动态规划-悬线法 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1211,7 +1189,7 @@
       
         <tags>
             
-            <tag> 动态规划-状压dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1236,7 +1214,7 @@
       
         <tags>
             
-            <tag> 动态规划-线性dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1261,7 +1239,7 @@
       
         <tags>
             
-            <tag> 动态规划-线性dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1286,9 +1264,7 @@
       
         <tags>
             
-            <tag> 动态规划-背包dp </tag>
-            
-            <tag> 容斥 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1313,7 +1289,7 @@
       
         <tags>
             
-            <tag> 栈 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1338,9 +1314,7 @@
       
         <tags>
             
-            <tag> 线段树 </tag>
-            
-            <tag> 动态规划-线段树优化dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1365,9 +1339,7 @@
       
         <tags>
             
-            <tag> 动态规划-区间dp </tag>
-            
-            <tag> 栈 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1392,7 +1364,7 @@
       
         <tags>
             
-            <tag> 动态规划-区间dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1417,7 +1389,7 @@
       
         <tags>
             
-            <tag> 动态规划-线性dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1442,7 +1414,7 @@
       
         <tags>
             
-            <tag> 动态规划-区间dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1492,7 +1464,7 @@
       
         <tags>
             
-            <tag> 动态规划-斜率优化 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1517,7 +1489,7 @@
       
         <tags>
             
-            <tag> 动态规划-斜率优化 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1542,9 +1514,7 @@
       
         <tags>
             
-            <tag> 动态规划-树形dp </tag>
-            
-            <tag> 二分答案 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1570,8 +1540,6 @@
         <tags>
             
             <tag> 学习笔记 </tag>
-            
-            <tag> 树上启发式合并 </tag>
             
         </tags>
       
@@ -1625,8 +1593,6 @@
             
             <tag> 学习笔记 </tag>
             
-            <tag> 树链剖分 </tag>
-            
         </tags>
       
     </entry>
@@ -1652,8 +1618,6 @@
             
             <tag> 学习笔记 </tag>
             
-            <tag> 线段树 </tag>
-            
         </tags>
       
     </entry>
@@ -1677,7 +1641,7 @@
       
         <tags>
             
-            <tag> 线段树 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1702,7 +1666,7 @@
       
         <tags>
             
-            <tag> 动态规划-换根dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1727,7 +1691,7 @@
       
         <tags>
             
-            <tag> 动态规划-树形dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1754,8 +1718,6 @@
             
             <tag> 学习笔记 </tag>
             
-            <tag> 动态规划-树形dp </tag>
-            
         </tags>
       
     </entry>
@@ -1779,7 +1741,7 @@
       
         <tags>
             
-            <tag> 线段树 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1804,7 +1766,7 @@
       
         <tags>
             
-            <tag> 动态规划-换根dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1829,7 +1791,7 @@
       
         <tags>
             
-            <tag> 动态规划-树形dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1854,7 +1816,7 @@
       
         <tags>
             
-            <tag> 动态规划-区间dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1879,7 +1841,7 @@
       
         <tags>
             
-            <tag> 动态规划-区间dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1904,7 +1866,7 @@
       
         <tags>
             
-            <tag> 组合数学 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1929,7 +1891,7 @@
       
         <tags>
             
-            <tag> 动态规划-线性dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1942,7 +1904,7 @@
       <link href="/2020/06/25/p1725/"/>
       <url>/2020/06/25/p1725/</url>
       
-        <content type="html"><![CDATA[<h1 id="P1725-琪露诺"><a href="#P1725-琪露诺" class="headerlink" title="P1725 琪露诺"></a><a href="https://www.luogu.com.cn/problem/P1725"></a>P1725 琪露诺</h1><p><a href="https://www.luogu.com.cn/problem/P1725">原题面</a></p><h2 id="大致题意"><a href="#大致题意" class="headerlink" title="大致题意"></a>大致题意</h2><p>给编号为0~N的N+1个数,每个格子都有一个冰冻指数ice[i]</p><p>每一个格子都可以转移到区间[i+l,i+r]上,求ice[i]总和的最大值</p><hr><p>很明显可以看出这是一道dp的题</p><p>我们不妨先把转移方程写出来</p><p>题目中说<strong>每一个格子都可以转移到区间[i+l,i+r]上</strong></p><p>不难推出转移方程:</p><ul><li><h3 id="dp-i-x3D-max-dp-i-r-dp-i-r-1-…dp-i-l-1-dp-i-l-ice-i"><a href="#dp-i-x3D-max-dp-i-r-dp-i-r-1-…dp-i-l-1-dp-i-l-ice-i" class="headerlink" title="$~~~~~~~~~~~~~~~~dp_i&#x3D;max(dp_{i-r},dp_{i-r+1},…dp_{i-l-1},dp_{i-l})+ice[i]$"></a>$~~~~~~~~~~~~~~~~dp_i&#x3D;max(dp_{i-r},dp_{i-r+1},…dp_{i-l-1},dp_{i-l})+ice[i]$</h3></li></ul><p>(放张图 样例是自造的,此图为i&#x3D;4的情况)<br><img src="https://cdn.luogu.com.cn/upload/image_hosting/ai7jcjuq.png"><br>因此,对于每一个$dp_i$来说</p><p>他的值均是由[$dp_{i-l}$~$dp_{i-r}$]区间中的最大值转移过来的(前面方程也说了)</p><p>而且这个区间是不断滑动的</p><p>滑动区间求最值,很容易联想到<strong>单调队列</strong></p><p>照题目里的数据范围普通的dp肯定会超时</p><p>因此我们可以用单调队列来优化它</p><p>做了一个比较粗糙的过程动态图qwq<br><img src="https://img-blog.csdnimg.cn/2020062520104327.gif"><br>补几张gif跳的比较快的图</p><p>$dp_1$</p><ul><li><img src="https://cdn.luogu.com.cn/upload/image_hosting/3h0hzail.png"><br>$dp_2$</li><li><img src="https://cdn.luogu.com.cn/upload/image_hosting/9osayz2u.png"><br>以此类推,均由[$dp_{i-l}$~$dp_{i-r}$]区间中的最大值转移过来</li><li><img src="https://cdn.luogu.com.cn/upload/image_hosting/pq2le485.png"></li></ul><hr><p>写的貌似有点累赘…</p><p>如有错误还请dalao们指出qwq,<del>话说没人会来看这么辣鸡的题解吧</del></p><p>贴个丑陋的代码:</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> ice[<span class="number">300010</span>],dp[<span class="number">300010</span>],q[<span class="number">300010</span>];</span><br><span class="line"><span class="type">int</span> l,n,r,ans=<span class="number">-1</span>&lt;&lt;<span class="number">30</span>;</span><br><span class="line"><span class="type">int</span> head=<span class="number">1</span>,tail=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">findmax</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=l;i&lt;=n;i++)&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(head&lt;=tail&amp;&amp;dp[q[tail]]&lt;dp[i-l]) tail--;<span class="comment">//单调队列 </span></span><br><span class="line"><span class="keyword">while</span>(head&lt;=tail&amp;&amp;q[head]&lt;i-r) head++;<span class="comment">//滑动区间 </span></span><br><span class="line">q[++tail]=i-l;</span><br><span class="line">dp[i]=dp[q[head]]+ice[i];<span class="comment">//转移 </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(i&gt;=n-r+<span class="number">1</span>) ans=<span class="built_in">max</span>(ans,dp[i]);<span class="comment">//在开始移动的时候求最大值 </span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">cin&gt;&gt;n&gt;&gt;l&gt;&gt;r;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;=n;i++)&#123;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;ice[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">memset</span>(dp,<span class="number">0xcf</span>,<span class="built_in">sizeof</span>(dp));dp[<span class="number">0</span>]=<span class="number">0</span>;<span class="comment">//注意,ice的值可能为负,所以要把dp跟ans的值赋为无穷小,一开始在这里卡了好久... </span></span><br><span class="line"><span class="built_in">findmax</span>();</span><br><span class="line">cout&lt;&lt;ans;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="P1725-琪露诺"><a href="#P1725-琪露诺" class="headerlink" title="P1725 琪露诺"></a><a href="https://www.luogu.com.cn/problem/P1725"></a>P1725 琪露诺</h1><p><a href="https://www.luogu.com.cn/problem/P1725">原题面</a></p><h2 id="大致题意"><a href="#大致题意" class="headerlink" title="大致题意"></a>大致题意</h2><p>给编号为0~N的N+1个数,每个格子都有一个冰冻指数ice[i]</p><p>每一个格子都可以转移到区间[i+l,i+r]上,求ice[i]总和的最大值</p><hr><p>很明显可以看出这是一道dp的题</p><p>我们不妨先把转移方程写出来</p><p>题目中说<strong>每一个格子都可以转移到区间[i+l,i+r]上</strong></p><p>不难推出转移方程:</p><ul><li><h3 id="dp-i-x3D-max-dp-i-r-dp-i-r-1-…dp-i-l-1-dp-i-l-ice-i"><a href="#dp-i-x3D-max-dp-i-r-dp-i-r-1-…dp-i-l-1-dp-i-l-ice-i" class="headerlink" title="$~~~~~~~~~~~~~~~~dp_i&#x3D;max(dp_{i-r},dp_{i-r+1},…dp_{i-l-1},dp_{i-l})+ice[i]$"></a>$~~~~~~~~~~~~~~~~dp_i&#x3D;max(dp_{i-r},dp_{i-r+1},…dp_{i-l-1},dp_{i-l})+ice[i]$</h3></li></ul><p>(放张图 样例是自造的,此图为i&#x3D;4的情况)<br><img src="https://cdn.luogu.com.cn/upload/image_hosting/ai7jcjuq.png"><br>因此,对于每一个$dp_i$来说</p><p>他的值均是由[$dp_{i-l}$~$dp_{i-r}$]区间中的最大值转移过来的(前面方程也说了)</p><p>而且这个区间是不断滑动的</p><p>滑动区间求最值,很容易联想到<strong>单调队列</strong></p><p>照题目里的数据范围普通的dp肯定会超时</p><p>因此我们可以用单调队列来优化它</p><p>做了一个比较粗糙的过程动态图qwq<br><img src="https://img-blog.csdnimg.cn/2020062520104327.gif"><br>补几张gif跳的比较快的图</p><p>$dp_1$</p><ul><li><img src="https://cdn.luogu.com.cn/upload/image_hosting/3h0hzail.png"><br>$dp_2$</li><li><img src="https://cdn.luogu.com.cn/upload/image_hosting/9osayz2u.png"><br>以此类推,均由[$dp_{i-l}$~$dp_{i-r}$]区间中的最大值转移过来</li><li><img src="https://cdn.luogu.com.cn/upload/image_hosting/pq2le485.png"></li></ul><hr><p>写的貌似有点累赘…</p><p>如有错误还请dalao们指出qwq,<del>话说没人会来看这么辣鸡的题解吧</del></p><p>贴个丑陋的代码:</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> ice[<span class="number">300010</span>],dp[<span class="number">300010</span>],q[<span class="number">300010</span>];</span><br><span class="line"><span class="type">int</span> l,n,r,ans=<span class="number">-1</span>&lt;&lt;<span class="number">30</span>;</span><br><span class="line"><span class="type">int</span> head=<span class="number">1</span>,tail=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">findmax</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=l;i&lt;=n;i++)&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(head&lt;=tail&amp;&amp;dp[q[tail]]&lt;dp[i-l]) tail--;<span class="comment">//单调队列 </span></span><br><span class="line"><span class="keyword">while</span>(head&lt;=tail&amp;&amp;q[head]&lt;i-r) head++;<span class="comment">//滑动区间 </span></span><br><span class="line">q[++tail]=i-l;</span><br><span class="line">dp[i]=dp[q[head]]+ice[i];<span class="comment">//转移 </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(i&gt;=n-r+<span class="number">1</span>) ans=<span class="built_in">max</span>(ans,dp[i]);<span class="comment">//在开始移动的时候求最大值 </span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">cin&gt;&gt;n&gt;&gt;l&gt;&gt;r;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;=n;i++)&#123;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;ice[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">memset</span>(dp,<span class="number">0xcf</span>,<span class="built_in">sizeof</span>(dp));dp[<span class="number">0</span>]=<span class="number">0</span>;<span class="comment">//注意,ice的值可能为负,所以要把dp跟ans的值赋为无穷小,一开始在这里卡了好久... </span></span><br><span class="line"><span class="built_in">findmax</span>();</span><br><span class="line">cout&lt;&lt;ans;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>​            </p>]]></content>
       
       
       <categories>
@@ -1954,7 +1916,7 @@
       
         <tags>
             
-            <tag> 动态规划-单调队列优化 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -1979,7 +1941,7 @@
       
         <tags>
             
-            <tag> 贪心 </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -2004,7 +1966,7 @@
       
         <tags>
             
-            <tag> 动态规划-线性dp </tag>
+            <tag> 题解 </tag>
             
         </tags>
       
