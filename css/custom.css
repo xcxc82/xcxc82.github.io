@@ -41,38 +41,38 @@ div#category{
 /* 首页文章卡片 */
 [data-theme="light"]
 #recent-posts > .recent-post-item{
-    background:rgba(255, 255, 255, 0.9);
+    background:rgba(255, 255, 255, 0.8);
 }
 
 /* 首页侧栏卡片 */
 [data-theme="light"]
 .card-widget{
-  background:rgba(255, 255, 255, 0.9)!important;
+  background:rgba(255, 255, 255, 0.8)!important;
 }
 /* 文章页面正文背景 */
 [data-theme="light"]
 div#post{
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.8);
 }
 /* 分页页面 */
 [data-theme="light"]
 div#page{
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.8);
 }
 /* 归档页面 */
 [data-theme="light"]
 div#archive{
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.8);
 }
 /* 标签页面 */
 [data-theme="light"]
 div#tag{
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.8);
 }
 /* 分类页面 */
 [data-theme="light"]
 div#category{
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.8);
 }
 
 /*10s为加载动画的时间，1为加载动画的次数，ease-in-out为动画效果*/

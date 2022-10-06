@@ -1326,8 +1326,8 @@ canvas:not(#ribbon-canvas),
 }
 :root {
   --global-font-size: 14px;
-  --global-bg: #fff;
-  --font-color: #4c4948;
+  --global-bg: $font-bg;
+  --font-color: '#000000';
   --hr-border: #d2ebfd;
   --hr-before-color: #bfe4fb;
   --search-bg: #f6f8fa;
@@ -1392,7 +1392,7 @@ input::placeholder {
   z-index: -999;
   width: 100%;
   height: 100%;
-  background: url(https://pic.jitudisk.com/public/2022/06/29/d622275b503b2.png);
+  background: url(https://pic.jitudisk.com/public/2022/10/06/feaf75b127c93.jpg);
   background-attachment: local;
   background-position: center;
   background-size: cover;
@@ -1623,7 +1623,7 @@ figure.highlight pre .javascript .function {
   color: #c792ea;
 }
 #article-container figure.highlight .line.marked {
-  background-color: rgba(113,124,180,0.314);
+  background-color: $highlight-selection;
 }
 #article-container figure.highlight table {
   display: block;
@@ -1662,8 +1662,8 @@ figure.highlight pre .javascript .function {
 }
 #article-container code {
   padding: 2px 4px;
-  background: rgba(27,31,35,0.05);
-  color: #f47466;
+  background: rgba(225,225,225,0.5);
+  color: #ff8d8d;
 }
 #article-container pre {
   padding: 10px 20px;
@@ -3189,7 +3189,7 @@ h1.page-title + .tag-cloud-list {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0);
   content: '';
 }
 #page-header.full_page {
@@ -3285,7 +3285,7 @@ h1.page-title + .tag-cloud-list {
   }
 }
 #page-header.post-bg:before {
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0);
 }
 #page-header #post-info {
   position: absolute;
@@ -5195,7 +5195,7 @@ blockquote.pullquote.right {
   box-shadow: none;
 }
 [data-theme='dark'] #article-container .note code {
-  background: rgba(27,31,35,0.05);
+  background: rgba(225,225,225,0.5);
 }
 [data-theme='dark'] #article-container .aplayer {
   filter: brightness(0.8);
