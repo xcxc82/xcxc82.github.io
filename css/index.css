@@ -1662,8 +1662,8 @@ figure.highlight pre .javascript .function {
 }
 #article-container code {
   padding: 2px 4px;
-  background: rgba(225,225,225,0.5);
-  color: #ff8d8d;
+  background: rgba(225,239,239,0.5);
+  color: #da4162;
 }
 #article-container pre {
   padding: 10px 20px;
@@ -5195,7 +5195,7 @@ blockquote.pullquote.right {
   box-shadow: none;
 }
 [data-theme='dark'] #article-container .note code {
-  background: rgba(225,225,225,0.5);
+  background: rgba(225,239,239,0.5);
 }
 [data-theme='dark'] #article-container .aplayer {
   filter: brightness(0.8);
