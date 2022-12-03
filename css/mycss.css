@@ -14,3 +14,8 @@
     background-color: unset ;
     box-shadow: unset ;
 }
+
+[data-theme="dark"] #nav .site-page,
+[data-theme="dark"] #nav .menus_items .menus_item .menus_item_child li a {
+  text-shadow: 0 0 2px var(--theme-color) !important;
+}
