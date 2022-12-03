@@ -9,3 +9,8 @@
     /* 以下代表透明度为0.5 */
     background: rgba(255,255,255,1);
 }
+
+#aside-content.aside-content > .sticky_layout > .card-widget.card-clock > .card-glass > .card-background {
+    background-color: unset ;
+    box-shadow: unset ;
+}
