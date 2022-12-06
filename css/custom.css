@@ -10,7 +10,7 @@
 
 [data-theme="dark"]
 div#post{
-  background:rgba(0, 0, 0, 0.8);
+  background:rgba(0, 0, 0, 0.9);
 }
 
 [data-theme="dark"]
@@ -53,7 +53,7 @@ div#category{
 /* 文章页面正文背景 */
 [data-theme="light"]
 div#post{
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.9);
 }
 /* 分页页面 */
 [data-theme="light"]
